@@ -2,6 +2,7 @@ import { useState } from "react";
 import User from "./User";
 import CoustomBouton from "./Coustombutton";
 import CoustomInput from "./CoustomInput";
+import AddUser from "./AddUser";
 
 function app(){
     const [users,setUsers] = useState([
@@ -13,12 +14,7 @@ function app(){
       ]);
  return (
     <div className="users p-4">
-        <form >
-        <CoustomInput text="Name"  forhtml="name" type="text"/>
-        <CoustomInput text="Email"  forhtml="email" type="email"/>
-        <CoustomInput text="Age"  forhtml="age" type="number"/>
-        </form>
-        <CoustomBouton text="Add" type="success"/>
+       <AddUser/>
        {
         users.map((user)=>
             <User name={user.name} email={user.email} key={user.id}/>
